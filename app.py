@@ -138,5 +138,5 @@ def view_zerodha_details(name):
         return f"❌ Error loading details for {name}: {str(e)}", 500
 
 
-if __name__ == "__main__":
+
 
