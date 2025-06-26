@@ -1,0 +1,10 @@
+
+<h2>Edit Investment</h2>
+<form method="post">
+  Asset Class: <input name="class" value="{{ row['Asset Class'] }}"><br>
+  Asset Name: <input name="name" value="{{ row['Asset Name'] }}"><br>
+  Amount Invested: <input name="amount" type="number" value="{{ row['Amount Invested'] }}"><br>
+  Current Value: <input name="current" type="number" value="{{ row['Current Value'] }}"><br>
+  <input type="submit" value="Update">
+</form>
+<a href="/">Back</a>

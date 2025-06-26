@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Investment Chart</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<h2>Asset-wise Investment Chart</h2>
+<canvas id="investmentChart" width="400" height="200"></canvas>
+<script>
+  const data = {{ data|safe }};
+  const ctx = document.getElementById('investmentChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: data.labels,
+      datasets: [
+        {
+          label: 'Amount Invested',
+          data: data.invested,
+          backgroundColor: 'rgba(255, 99, 132, 0.6)'
+        },
+        {
+          label: 'Current Value',
+          data: data.current,
+          backgroundColor: 'rgba(54, 162, 235, 0.6)'
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        y: { beginAtZero: true }
+      }
+    }
+  });
+</script>
+<a href="/">Back to Dashboard</a>
+</body>
+</html>
